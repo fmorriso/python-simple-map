@@ -23,7 +23,7 @@ def get_bounding_box_coordinates(file_path: str) -> BoundingBoxPolygon:
     return polygon_coords
 
 
-if __name__ == '__main__':
+def main() -> None:
     # pull in the coordinates from the JSON file
     bounding_box_file = ProgramSettings.get_setting("COORDINATES_FILE")
     polygon_coords = get_bounding_box_coordinates(bounding_box_file)
@@ -57,3 +57,7 @@ if __name__ == '__main__':
     window = MapWindow(html_content)
     window.show()
     sys.exit(app.exec())
+
+
+if __name__ == '__main__':
+    main()
