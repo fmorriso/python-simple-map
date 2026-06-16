@@ -1,0 +1,30 @@
+/* Layout container */
+.map-header-container {
+    position: fixed;
+    top: 0.625rem;        /* 10px equivalent */
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    
+    display: flex;
+    justify-content: center; 
+    pointer-events: none; 
+}
+
+/* The actual stylized title card */
+.map-title-card {
+    background-color: white;
+    border-radius: 0.375rem;   /* 6px equivalent */
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+    
+    /* Typography */
+    font-family: Arial, sans-serif;
+    font-size: 1.125rem;       /* 18px equivalent */
+    font-weight: bold;
+    
+    /* Using em here means if you change font-size to 1.5rem later, 
+       the padding scales up automatically to match the larger text */
+    padding: 0.5em 1em;        /* 8px top/bottom, 16px left/right equivalent */
+    
+    pointer-events: auto; 
+}
