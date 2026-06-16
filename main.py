@@ -5,23 +5,20 @@ import json
 from PyQt6.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget
 from PyQt6.QtWebEngineWidgets import QWebEngineView
 
+from program_settings import ProgramSettings
+
 def get_python_version() -> str:
     return f'{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}'
 
-# TODO: move this to a separate persistence layer file
-def get_bounding_box_coordinates() -> list:
-    with open("bounding_box.json") as f:
+# TODO: move this to a separate persistence layer
+def get_bounding_box_coordinates(file_path: str) -> list:
+    with open(file_path) as f:
         polygon_coords = json.load(f)
     return polygon_coords
 
-polygon_coords = get_bounding_box_coordinates()
+bounding_box_file = ProgramSettings.get_setting("COORDINATES_FILE")
 
-# polygon_coords = [
-#     [36.0, -120.0],
-#     [45.0, -120.0],
-#     [45.0, -105.0],
-#     [36.0, -105.0],
-# ]
+polygon_coords = get_bounding_box_coordinates(bounding_box_file)
 
 # Build the Folium map
 m = folium.Map()
