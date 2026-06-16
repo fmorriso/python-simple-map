@@ -9,7 +9,6 @@ from PyQt6.QtWebEngineWidgets import QWebEngineView
 from map_window import MapWindow
 from custom_types import BoundingBoxPolygon
 from program_settings import ProgramSettings
-from typing import List, Tuple
 
 
 def get_python_version() -> str:
