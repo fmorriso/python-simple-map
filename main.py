@@ -5,6 +5,7 @@ import json
 from PyQt6.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget
 from PyQt6.QtWebEngineWidgets import QWebEngineView
 
+from map_window import MapWindow
 from program_settings import ProgramSettings
 
 def get_python_version() -> str:
@@ -45,20 +46,9 @@ html_bytes = io.BytesIO()
 m.save(html_bytes, close_file=False)
 html_content = html_bytes.getvalue().decode()
 
-# Display in Qt window
-class MapWindow(QMainWindow):
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle("Map Viewer")
-        self.resize(1024, 768)
-        self.browser = QWebEngineView()
-        self.browser.setHtml(html_content)
-        container = QWidget()
-        layout = QVBoxLayout(container)
-        layout.addWidget(self.browser)
-        self.setCentralWidget(container)
 
+# Display in Qt window
 app = QApplication(sys.argv)
-window = MapWindow()
+window = MapWindow(html_content)
 window.show()
 sys.exit(app.exec())
