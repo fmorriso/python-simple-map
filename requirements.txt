@@ -1,4 +1,5 @@
-python-dotenv~=1.2.2
+# packages required by this program
 folium~=0.20.0
 PyQt6~=6.11.0
 PyQt6-WebEngine~=6.11.0
+python-dotenv~=1.2.2
