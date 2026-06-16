@@ -2,6 +2,7 @@ import sys
 import folium
 import io
 import json
+from pathlib import Path
 from PyQt6.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget
 from PyQt6.QtWebEngineWidgets import QWebEngineView
 
@@ -29,16 +30,10 @@ m.fit_bounds(polygon_coords)
 # Add title
 map_title = f"A Simple Map Example using python {get_python_version()}"
 
-title_html = f"""
-    <div style="position: fixed; 
-                top: 10px; left: 50%; transform: translateX(-50%);
-                z-index: 1000; background-color: white;
-                padding: 8px 16px; border-radius: 6px;
-                box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
-                font-size: 18px; font-weight: bold; font-family: Arial;">
-        {map_title}
-    </div>
-"""
+# Load external HTML and replace placeholder
+map_template = Path("map.html").read_text()
+title_html = map_template.format(map_title=map_title)
+
 m.get_root().html.add_child(folium.Element(title_html))
 
 # Convert to HTML in memory (no temp file needed)
