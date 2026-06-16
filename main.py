@@ -85,8 +85,8 @@ def run_user_interface(html_content: str) -> None:
 
 
 def main() -> None:
+    # echo which packages are being used and what version is installed
     package_names = get_required_package_names()
-
     for pkg in package_names:
         package_name = f'{pkg}'.ljust(16)
         try:

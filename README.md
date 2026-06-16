@@ -4,11 +4,12 @@ Python - Simple Map
 
 ## Tools Used
 
-| Tool   | Version |
-| :----- | ------: |
-| Python |  3.14.6 |
-| VSCode | 1.124.2 |
-| Folium |  0.20.0 |
+| Tool          | Version |
+| :------------ | ------: |
+| Python        |  3.14.6 |
+| VSCode        | 1.124.2 |
+| python-dotenv |   1.2.2 |
+| Folium        |  0.20.0 |
 
 ## Change History (newest on top)
 
@@ -26,6 +27,12 @@ Here's an example:
 
 ```text
 COORDINATES_FILE = "bounding_box.json"
+```
+
+### PyQt6 quirk to watch out for
+
+```
+python3 -m pip install --user --upgrade --force-reinstall PyQt6 PyQt6-WebEngine
 ```
 
 ## References
