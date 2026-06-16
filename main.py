@@ -7,24 +7,27 @@ from PyQt6.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget
 from PyQt6.QtWebEngineWidgets import QWebEngineView
 
 from map_window import MapWindow
+from custom_types import BoundingBoxPolygon
 from program_settings import ProgramSettings
+from typing import List, Tuple
 
 def get_python_version() -> str:
     return f'{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}'
 
 # TODO: move this to a separate persistence layer
-def get_bounding_box_coordinates(file_path: str) -> list:
+def get_bounding_box_coordinates(file_path: str) -> BoundingBoxPolygon:
     with open(file_path) as f:
-        polygon_coords = json.load(f)
+        polygon_coords: BoundingBoxPolygon = json.load(f)
     return polygon_coords
 
+# pull in the coordinates from the JSON file and convert to a list of tuples for Folium
 bounding_box_file = ProgramSettings.get_setting("COORDINATES_FILE")
-
 polygon_coords = get_bounding_box_coordinates(bounding_box_file)
 
 # Build the Folium map
 m = folium.Map()
-folium.Polygon(locations=polygon_coords, color="blue", fill=True, fill_opacity=0.2).add_to(m)
+bounding_box_polygon: folium.Polygon = folium.Polygon(locations=polygon_coords, color="blue", fill=True, fill_opacity=0.2)
+bounding_box_polygon.add_to(m)
 m.fit_bounds(polygon_coords)
 
 # Add title
