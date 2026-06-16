@@ -4,12 +4,14 @@ Python - Simple Map
 
 ## Tools Used
 
-| Tool          | Version |
-| :------------ | ------: |
-| Python        |  3.14.6 |
-| VSCode        | 1.124.2 |
-| python-dotenv |   1.2.2 |
-| Folium        |  0.20.0 |
+| Tool            | Version |
+| :-------------- | ------: |
+| Python          |  3.14.6 |
+| VSCode          | 1.124.2 |
+| Folium          |  0.20.0 |
+| PyQt6           |  6.11.0 |
+| PyQt6-WebEngine |  6.11.0 |
+| python-dotenv   |   1.2.2 |
 
 ## Change History (newest on top)
 
@@ -31,7 +33,9 @@ COORDINATES_FILE = "bounding_box.json"
 
 ### PyQt6 quirk to watch out for
 
-```
+Make sure the two PyQt6 packages have compatible versions using:
+
+```bash
 python3 -m pip install --user --upgrade --force-reinstall PyQt6 PyQt6-WebEngine
 ```
 
