@@ -1,0 +1,26 @@
+[project]
+name = "simple-map"
+version = "0.1.0"
+description = "Python - Simple Map"
+readme = "README.md"
+authors = [
+    { name = "Fred Morrison", email = "frederick.morrison@outlook.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "folium>=0.20.0",
+    "pyqt6>=6.11.0",
+    "python-dotenv>=1.2.3",
+]
+
+[project.scripts]
+simple-map = "simple_map:main"
+
+[build-system]
+requires = ["uv_build>=0.12.10,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.deptry.package_module_name_map]
+pyqt6 = ["PyQt6"]
+python-dotenv = ["dotenv"]
+

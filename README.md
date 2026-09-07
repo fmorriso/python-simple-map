@@ -5,13 +5,13 @@ Python - Simple Map
 ## Tools Used
 
 | Tool            | Version |
-| :-------------- | ------: |
-| Python          |  3.14.6 |
-| VSCode          | 1.124.2 |
+| :-------------- |--------:|
+| Python          |  3.14.7 |
+| VSCode          | 1.136.0 |
 | Folium          |  0.20.0 |
 | PyQt6           |  6.11.0 |
 | PyQt6-WebEngine |  6.11.0 |
-| python-dotenv   |   1.2.2 |
+| python-dotenv   |   1.2.3 |
 
 ## Change History (newest on top)
 
