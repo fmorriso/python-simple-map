@@ -89,7 +89,8 @@ def main() -> None:
     for pkg in package_names:
         package_name = f'{pkg}'.ljust(16)
         try:
-            print(f'{package_name}{get_package_version(pkg)}')
+            version_info = get_package_version(pkg)
+            print(f"{pkg:<16}{version_info}")
         except Exception as e:
             print(e)
 
