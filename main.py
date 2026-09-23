@@ -6,7 +6,6 @@ import json
 from importlib.metadata import version
 from pathlib import Path
 from PyQt6.QtWidgets import QApplication
-from PyQt6.QtWebEngineWidgets import QWebEngineView
 
 from map_window import MapWindow
 from custom_types import BoundingBoxPolygon

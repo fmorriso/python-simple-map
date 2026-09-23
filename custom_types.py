@@ -1,7 +1,6 @@
 # Custom types for use in this project.
-# It follows PIE 613 guidelines for type aliases and is imported into main.py for use there.
+# It follows PEP 613 guidelines for type aliases and is imported into main.py for use there.
+# Requires python 3.12 or newer
 
-from typing import TypeAlias
-
-Coordinate: TypeAlias = tuple[float, float]
-BoundingBoxPolygon: TypeAlias = list[Coordinate]
+type Coordinate = tuple[float, float]
+type BoundingBoxPolygon = list[Coordinate]
