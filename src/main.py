@@ -33,7 +33,7 @@ def get_required_package_names() -> list[str]:
     :rtype: list[str
     """
     packages: list[str] = []
-    with open('requirements.txt') as f:
+    with open('../requirements.txt') as f:
         for line in f:
             line = line.strip()
             if not line or line.startswith('#'):

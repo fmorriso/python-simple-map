@@ -26,7 +26,7 @@ Python - Simple Map
 Requires Python 3.12 or newer
 
 To make this program work, after bringing down the code from GitHub,
-you must make a new file called **_.env_** in the same directory as `main.py` that holds the file system path to where
+you must make a new file called **_.env_** in the same directory as `src/main.py` that holds the file system path to where
 the map coordinates are located.
 
 Here's an example:

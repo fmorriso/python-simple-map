@@ -8,7 +8,7 @@ from pathlib import Path
 
 @dataclass(frozen = True)
 class ProgramSettings:
-    ENV_PATH: ClassVar[os.PathLike[str]] =  Path('.env')
+    ENV_PATH: ClassVar[os.PathLike[str]] =  Path('../.env')
 
 
     @staticmethod
